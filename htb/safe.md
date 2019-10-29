@@ -9,7 +9,7 @@ At the time of writing, safe is active at `10.10.10.147`. Viewing the page gives
 
 Great, something to target. It's running on port `1337`, and can be downloaded at `10.10.10.147/myapp`. `file myapp` shows it's a 64bit `ELF` executable. The app will first run `/usr/bin/uptime`, and then print `What do you want me to echo back?`. It then waits for user input, uses `gets()` *\*cough*\* **insecure** *\*cough\** to get the user input, prints it to screen, then exits.
 
-Running `echo $(perl -e 'print "A"x150')` gives us a lovely little `Segmentation fault` :). Further testing reveals that it will overwrite rip, and crash, with more than 120 characters. Great, all we need is to throw in some `/bin/sh` shellcode and boom, shell... well, no. Unfortunately the binary has the `NX` bit set, meaning we're limited to ROP gadgets to do our bidding.
+Running `echo $(perl -e 'print "A"x150') | ./myapp` gives us a lovely little `Segmentation fault` :). Further testing reveals that it will overwrite rbp, and crash, with more than 120 characters. Great, all we need is to throw in some `/bin/sh` shellcode and boom, shell... well, no. Unfortunately the binary has the `NX` bit set, meaning we're limited to ROP gadgets to do our bidding.
 
 Analyzing the disassembly reveals a function called `test`, which is never called:
 ```x86asm
