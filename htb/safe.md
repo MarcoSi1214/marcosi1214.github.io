@@ -30,7 +30,7 @@ $ ropper -f ./myapp | grep "r13"
 0x0000000000401203: pop rbp; pop r12; pop r13; pop r14; pop r15; ret; 
 0x0000000000401205: pop rsp; pop r13; pop r14; pop r15; ret; 
 ```
-We don't want to touch rsp or rbp, and the first one just makes our payload larger - `0x0000000000401206` is our target. Remember that we can't just place some shellcode and jump to that, instead we'll abuse the use of `system()`, which is at `0x0000000000404060`. `system()` uses rdi for it's argument - a pointer to a string that is the command to be executed... now how would we modify rdi?... Once again, `test` comes to our rescue:
+We don't want to touch rsp or rbp, and the first one just makes our payload larger - `0x0000000000401206` is our target. Remember that we can't just place some shellcode and jump to that, instead we'll abuse the use of `system()`, which is at `0x0000000000401040`. `system()` uses rdi for it's argument - a pointer to a string that is the command to be executed... now how would we modify rdi?... Once again, `test` comes to our rescue:
 ```x86asm
 .text:0000000000401156                 mov     rdi, rsp
 ```
@@ -121,3 +121,5 @@ root@safe:~# cat root.txt
 <REDACTED>
 ```
 Machine owned :)
+
+Happy Hacking!
