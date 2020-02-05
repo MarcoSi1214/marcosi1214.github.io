@@ -4,4 +4,4 @@
 
 ### CTFs:
 #### io.netgarage.org
-- (basic) [level01](marcosi1214.github.io/ctf/io.netgarage.org/basic/level1.md)
+- (basic) [level01](marcosi1214.github.io/ctf/io.netgarage.org/basic/level1)
