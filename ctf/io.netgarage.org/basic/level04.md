@@ -43,7 +43,7 @@ level4@io:/levels$ ./level04
 Welcome <REDACTED>
 ```
 
-And we now have the pass from `/home/level5/.pass`:
+And we now have the pass from `/home/level5/.pass`
 And so, level04 is solved.
 
 Happy Hacking!
