@@ -4,7 +4,7 @@
 
 ### CTFs:
 #### io.netgarage.org
-- (basic) [level01](marcosi1214.github.io/ctf/io.netgarage.org/basic/level01)
-- (basic) [level02](marcosi1214.github.io/ctf/io.netgarage.org/basic/level02)
-- (basic) [level03](marcosi1214.github.io/ctf/io.netgarage.org/basic/level03)
-- (basic) [level04](marcosi1214.github.io/ctf/io.netgarage.org/basic/level04)
+- (basic) [level01](ctf/io.netgarage.org/basic/level01)
+- (basic) [level02](ctf/io.netgarage.org/basic/level02)
+- (basic) [level03](ctf/io.netgarage.org/basic/level03)
+- (basic) [level04](ctf/io.netgarage.org/basic/level04)
